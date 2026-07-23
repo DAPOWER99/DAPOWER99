@@ -1,16 +1,44 @@
-## Hi there 👋
+### Hi there, I'm DAPOWER99 👋
 
-<!--
-**DAPOWER99/DAPOWER99** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=~DAPOWER99+-+CLI+Dev)](https://git.io/typing-svg)
 
-Here are some ideas to get you started:
+I'm a software developer and programmer who builds custom command-line tools, utilities, and lightweight desktop applications. I enjoy low-level systems logic, optimization, and scripting with Python and modern tooling.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 💻 Tech Stack & Tools
+
+* **Languages:** Python, Zig, C/C++
+* **Scripting & Automation:** PowerShell, Bash, Git, OpenSSL / Signtool
+* **Graphics & Rendering:** OpenGL, Vulkan, OpenCV, NumPy, SciPy
+* **Development Environment:** Minimalist CLI workflows, custom standalone distributions
+
+---
+
+### 🚀 Projects & Utilities
+
+* **[Spectral Ghost](https://github.com/DAPOWER99)** — A real-time screen sampling and color recognition engine built with Python, Tkinter, OpenCV, NumPy, and SciPy.
+* **[Ghost Python](https://github.com/DAPOWER99)** — An ultra-minimal, portable Windows distribution of Python designed for standalone deployment and custom shell scripting.
+* **[Gridlock](https://github.com/DAPOWER99)** — A custom Minesweeper clone engineered for both command-line interfaces and web execution.
+* **[GLI](https://github.com/DAPOWER99)** — A terminal-based browser and renderer utilizing Vulkan and Zig to map GPU compute outputs directly to an ASCII character grid.
+
+---
+
+### 🔍 Current Focus & Background
+
+* 🔭 **I’m currently working on:** Building low-level CLI utilities and terminal-based tools like GLI.
+* 🌱 **I’m currently learning:** Advanced systems programming in Zig and low-level graphics rendering with Vulkan.
+* 💬 **Ask me about:** Python optimizations, custom standalone executable packaging, and building command-line interfaces.
+* 📫 **How to reach me:** Through my GitHub profile and repositories.
+
+---
+
+### 📊 GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=DAPOWER99&show_icons=true&theme=radical&hide_border=true&bg_color=151515" alt="GitHub Stats" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DAPOWER99&layout=compact&theme=radical&hide_border=true&bg_color=151515" alt="Top Languages" />
+</div>
