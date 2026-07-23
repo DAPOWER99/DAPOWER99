@@ -44,12 +44,33 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ![OpenSSL](https://img.shields.io/badge/OpenSSL-7717FF?style=for-the-badge&logo=openssl&logoColor=white)
 ![Vulkan](https://img.shields.io/badge/Vulkan-AC162C?style=for-the-badge&logo=vulkan&logoColor=white)
 ![OpenGL](https://img.shields.io/badge/OpenGL-5586A4?style=for-the-badge&logo=opengl&logoColor=white)
-### 📊 GitHub Stats
-
 
 ---
-
+### 📊 GitHub Stats
 ![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]
 ![Top Languages](https://github-flex.vercel.app/api/languages?username=DAPOWER99&theme=radical&hide_border=true)
-[![GitHub Metrics](https://github-metrics.lecoq.io/DAPOWER99?template=classic&metrics.plugin.lines=yes&metrics.plugin.habits=yes&metrics.plugin.habits.from=200&metrics.plugin.achievements=yes&theme=radical)](https://github.com/DAPOWER99/DAPOWER99)
+
+---
+### 📬 Connect & Channels
+
+[![GitHub](https://img.shields.io/badge/GitHub-DAPOWER99-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DAPOWER99)
+[![Instagram](https://img.shields.io/badge/Instagram-_youssef__is__cool-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_youssef_is_cool)
+[![X (Twitter)](https://img.shields.io/badge/X-King__Dragon__iz-000000?style=for-the-badge&logo=x&logoColor=white)](https://www.x.com/King_Dragon_iz)
+[![Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/9eyjFmv8Hu)
+[![GitLab](https://img.shields.io/badge/GitLab-DaPower99-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/DaPower99)
+[![TikTok](https://img.shields.io/badge/TikTok-_dragon3mk_-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@_dragon3mk_)
+[![Pinterest](https://img.shields.io/badge/Pinterest-Dragon__YG-E60023?style=for-the-badge&logo=pinterest&logoColor=white)](https://www.pinterest.com/Dragon_YG)
+[![Bluesky](https://img.shields.io/badge/Bluesky-Profile-0285FF?style=for-the-badge&logo=bluesky&logoColor=white)](https://bsky.app/profile/did:plc:cjbh54mvfqwfvcl5pjgndt43)
+[![Patreon](https://img.shields.io/badge/Patreon-DragonYG-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/DragonYG)
+[![Medium](https://img.shields.io/badge/Medium-DragonTheDev-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@DragonTheDev)
+[![Threads](https://img.shields.io/badge/Threads-_youssef__is__cool-000000?style=for-the-badge&logo=threads&logoColor=white)](https://threads.com/@_youssef_is_cool)
+[![Tumblr](https://img.shields.io/badge/Tumblr-dragonyg-35465C?style=for-the-badge&logo=tumblr&logoColor=white)](https://dragonyg.tumblr.com/)
+[![Twitch](https://img.shields.io/badge/Twitch-drgn__yg-9146FF?style=for-the-badge&logo=twitch&logoColor=white)](https://www.twitch.tv/drgn_yg)
+[![Kick](https://img.shields.io/badge/Kick-dragonthedev-53FC18?style=for-the-badge&logo=kick&logoColor=black)](https://kick.com/dragonthedev)
+[![GameJolt](https://img.shields.io/badge/GameJolt-Drgn__Dev-222222?style=for-the-badge&logo=gamejolt&logoColor=white)](https://gamejolt.com/@Drgn_Dev)
+[![itch.io](https://img.shields.io/badge/itch.io-dapower99-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white)](https://dapower99.itch.io/)
+[![StackOverflow](https://img.shields.io/badge/StackOverflow-Dragon-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/30902111/dragon)
+
+---
+### ✨ Status
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?style=for-the-badge&logo=gitpod)](https://gitpod.io/#https://github.com/DAPOWER99/DAPOWER99)
