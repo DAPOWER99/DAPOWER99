@@ -55,3 +55,6 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DAPOWER99&layout=compact&theme=radical&hide_border=true" />
 </p>
+![GitHub Stats](https://readme-stats-github.pages.dev/api?username=DAPOWER99&theme=shadow)
+
+![Top Languages](https://readme-stats-github.pages.dev/api/top-langs?username=DAPOWER99&theme=shadow)
