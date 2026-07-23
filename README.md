@@ -48,13 +48,7 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 
 ---
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=DAPOWER99&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" />
-</p>
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DAPOWER99&layout=compact&theme=radical&hide_border=true" />
-</p>
 ![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]({https://git.io/streak-svg})
 
 ![Top Languages](https://github-flex.vercel.app/api/languages?username=DAPOWER99&theme=radical&hide_border=true)
