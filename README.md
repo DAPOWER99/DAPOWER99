@@ -32,9 +32,17 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 * 📫 **How to reach me:** Through my GitHub profile and repositories.
 
 ---
+### 📊 Connect & Skills
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ### 📊 GitHub Stats
 
+
+---
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=DAPOWER99&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" />
 </p>
