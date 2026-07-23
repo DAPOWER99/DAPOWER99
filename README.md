@@ -51,4 +51,4 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]
 ![Top Languages](https://github-flex.vercel.app/api/languages?username=DAPOWER99&theme=radical&hide_border=true)
-[![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=DAPOWER99&theme=radical&hide_border=true&area=true)](https://github.com/DAPOWER99)
+![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=DAPOWER99&theme=radical&hide_border=true&area=true)]
