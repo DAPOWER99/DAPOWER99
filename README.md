@@ -49,6 +49,7 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 ---
 
-![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]({https://git.io/streak-svg})
-
+![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]
+[![GitHub Trophy](https://github-profile-trophy.vercel.app/?username=DAPOWER99&theme=radical&no-frame=true&margin-w=4&margin-h=4)](https://github.com/ryo-ma/github-profile-trophy)
 ![Top Languages](https://github-flex.vercel.app/api/languages?username=DAPOWER99&theme=radical&hide_border=true)
+[![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=DAPOWER99&theme=radical&hide_border=true&area=true)](https://github.com/DAPOWER99)
