@@ -35,6 +35,10 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 ### 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DAPOWER99&show_icons=true&theme=radical&hide_border=true&bg_color=151515)
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api?username=DAPOWER99&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" />
+</p>
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=DAPOWER99&layout=compact&theme=radical&hide_border=true&bg_color=151515)
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DAPOWER99&layout=compact&theme=radical&hide_border=true" />
+</p>
