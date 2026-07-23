@@ -52,3 +52,4 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]
 ![Top Languages](https://github-flex.vercel.app/api/languages?username=DAPOWER99&theme=radical&hide_border=true)
 [![GitHub Metrics](https://github-metrics.lecoq.io/DAPOWER99?template=classic&metrics.plugin.lines=yes&metrics.plugin.habits=yes&metrics.plugin.habits.from=200&metrics.plugin.achievements=yes&theme=radical)](https://github.com/DAPOWER99/DAPOWER99)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?style=for-the-badge&logo=gitpod)](https://gitpod.io/#https://github.com/DAPOWER99/DAPOWER99)
