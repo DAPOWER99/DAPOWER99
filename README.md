@@ -17,10 +17,10 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 ### 🚀 Projects & Utilities
 
-* **[Spectral Ghost](https://github.com/DAPOWER99)** — A real-time screen sampling and color recognition engine built with Python, Tkinter, OpenCV, NumPy, and SciPy.
-* **[Ghost Python](https://github.com/DAPOWER99)** — An ultra-minimal, portable Windows distribution of Python designed for standalone deployment and custom shell scripting.
-* **[Gridlock](https://github.com/DAPOWER99)** — A custom Minesweeper clone engineered for both command-line interfaces and web execution.
-* **[GLI](https://github.com/DAPOWER99)** — A terminal-based browser and renderer utilizing Vulkan and Zig to map GPU compute outputs directly to an ASCII character grid.
+* **[Spectral Ghost](https://github.com/DAPOWER99/Spectral-Ghost)** — A real-time screen sampling and color recognition engine built with Python, Tkinter, OpenCV, NumPy, and SciPy.
+* **[Ghost Python](https://github.com/DAPOWER99/GhostPython)** — An ultra-minimal, portable Windows distribution of Python designed for standalone deployment and custom shell scripting.
+* **[Gridlock](https://github.com/DAPOWER99/GridLock)** — A custom Minesweeper clone engineered for both command-line interfaces and web execution.
+* **[HIDEBAF](https://github.com/DAPOWER99/HIDEBAF)** — A custom Encryption software perfect for autonomy!🌟
 
 ---
 
