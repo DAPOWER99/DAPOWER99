@@ -164,6 +164,85 @@
             height: 28px;
         }
 
+        /* Terminal UI Styles */
+        .terminal-container {
+            background-color: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(6, 207, 6);
+            margin-top: 32px;
+        }
+
+        .terminal-output {
+            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+        }
+
+        .terminal-input-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-prompt {
+            color: rgb(6, 207, 6);
+            font-weight: bold;
+        }
+
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: rgb(6, 207, 6);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            outline: none;
+            flex: 1;
+        }
+
+        /* Modal Overlay for Embedded Matthy App */
+        #calc-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        #calc-modal-content {
+            background: #111;
+            color: rgb(6, 207, 6);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #ff4d4d;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             .header-section {
                 flex-direction: column-reverse;
@@ -173,6 +252,9 @@
             }
         }
     </style>
+    <!-- Tailwind for the embedded calculator layout compatibility -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 </head>
 <body>
 
@@ -336,7 +418,300 @@
             </a> 
             but more
         </p>
+
+        <hr>
+
+        <!-- Secret Terminal Section -->
+        <h2>🖥️ Secret Terminal</h2>
+        <p>Type <code>calc</code> and press Enter to launch the Matthy engine interface[cite: 1].</p>
+        <div class="terminal-container">
+            <div id="terminal-output" class="terminal-output">DAPOWER99 Terminal [Version 3.14.0]
+(c) Corporation. All rights reserved.
+
+Type 'help' for available commands, or 'calc' to launch Matthy[cite: 1].
+</div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">guest@dapower99:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off" />
+            </div>
+        </div>
     </div>
 
+    <!-- Modal for Matthy Calculator UI -->
+    <div id="calc-modal">
+        <div id="calc-modal-content">
+            <button class="close-modal" onclick="closeCalculator()">X</button>
+            <div class="flex flex-col items-center justify-center p-4">
+                <div id="calculator" class="p-6 rounded-lg shadow-lg max-w-md w-full bg-white"></div>
+                <div id="external-controls" class="mt-4 flex gap-2"></div>
+                <div id="settings-panel" class="mt-2 max-w-md w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Logic Script -->
+    <script>
+        const termInput = document.getElementById('terminal-input');
+        const termOutput = document.getElementById('terminal-output');
+        const calcModal = document.getElementById('calc-modal');
+
+        termInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const cmd = termInput.value.trim();
+                termOutput.innerHTML += `\nguest@dapower99:~$ ${cmd}\n`;
+                
+                if (cmd === 'calc') {
+                    termOutput.innerHTML += `Launching Matthy interface...\n`;
+                    openCalculator();
+                } else if (cmd === 'help') {
+                    termOutput.innerHTML += `Available commands: help, calc, clear, status, echo [text]\n`;
+                } else if (cmd === 'clear') {
+                    termOutput.innerHTML = `DAPOWER99 Terminal [Version 3.14.0]\n`;
+                } else if (cmd === 'status') {
+                    termOutput.innerHTML += `System online. Shell: PowerShell + Custom Scripts. Runtime: Ghost Python v3.14.\n`;
+                } else if (cmd.startsWith('echo ')) {
+                    termOutput.innerHTML += `${cmd.substring(5)}\n`;
+                } else if (cmd !== '') {
+                    termOutput.innerHTML += `Command not recognized: '${cmd}'. Type 'help' for options.\n`;
+                }
+                
+                termInput.value = '';
+                termOutput.scrollTop = termOutput.scrollHeight;
+            }
+        });
+
+        function openCalculator() {
+            calcModal.style.display = 'flex';
+            if (typeof main === 'function' && !pyodideInitialized) {
+                main();
+            }
+        }
+
+        function closeCalculator() {
+            calcModal.style.display = 'none';
+        }
+    </script>
+
+    <!-- Matthy Calculator Embedded Script[cite: 1] -->
+    <script>
+        const buttons = [
+          ['7', '8', '9', '/'],
+          ['4', '5', '6', 'x'],
+          ['1', '2', '3', '-'],
+          ['0', '.', '+', 'More'],
+        ];
+        const collapseButtons = ['^', 'sin', 'cos', 'tan', 'sqrt', '(', ')', 'ln', 'pi', 'diff', 'int'];
+        const SOLVE_BUTTON = 'Solve';
+        const RANDOM_BUTTON = 'Random';
+        const CLEAR_BUTTON = 'C';
+        const SETTINGS_BUTTON = 'Settings';
+        const LIGHT_DARK_BUTTON = 'Light/Dark';
+
+        const randomEquations = [
+          '2 + 2',
+          'sin(pi/2)',
+          'x^2 + 2*x + 1',
+          '3 * (4 + 5)',
+          'sqrt(16)',
+          'cos(pi)',
+          '2^4',
+          'x + 5 = 10',
+          'diff(x^3, x)',
+          'integrate(x^2, x)',
+          '{x + y = 5, x - y = 1}',
+          'ln(e^2)'
+        ];
+
+        let inputText = '';
+        let resultText = '';
+        let errorText = '';
+        let darkMode = false;
+        let showSettings = false;
+        let showCollapseMenu = false;
+        let opacity = 1.0;
+        let pyodide;
+        let pyodideInitialized = false;
+
+        async function initPyodide() {
+          pyodide = await loadPyodide();
+          await pyodide.loadPackage('sympy');
+          await pyodide.runPythonAsync(`
+import sympy as sp
+import random
+
+def validate_input(expr):
+    try:
+        sp.parse_expr(expr.replace('x', '*').replace('^', '**'))
+        return True
+    except:
+        return False
+
+def solve_equation(expr):
+    import json
+    from sympy import symbols, Eq, solve, parse_expr, diff, integrate
+
+    expr = expr.replace('^', '**')  # convert ^ to **
+    x, y = symbols('x y')
+    try:
+        if '=' in expr and '{' in expr:
+            eqs = expr.strip('{}').split(',')
+            equations = [Eq(parse_expr(e.split('=')[0]), parse_expr(e.split('=')[1])) for e in eqs]
+            result = solve(equations, (x, y))
+        elif '=' in expr:
+            left, right = expr.split('=')
+            equation = Eq(parse_expr(left), parse_expr(right))
+            result = solve(equation, x)
+        elif expr.startswith('diff'):
+            parts = expr[5:-1].split(',')
+            result = diff(parse_expr(parts[0]), symbols(parts[1]))
+        elif expr.startswith('int'):
+            parts = expr[9:-1].split(',')
+            result = integrate(parse_expr(parts[0]), symbols(parts[1]))
+        else:
+            result = parse_expr(expr).evalf()
+
+        return json.dumps({ "result": str(result), "error": None })
+    except Exception as e:
+        return json.dumps({ "result": None, "error": str(e) })
+          `);
+          pyodideInitialized = true;
+        }
+
+        function handleBackgroundUpload(event) {
+          const file = event.target.files[0];
+          if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              const modalContent = document.getElementById('calc-modal-content');
+              modalContent.style.backgroundImage = `url(${e.target.result})`;
+              modalContent.style.backgroundSize = 'cover';
+              modalContent.style.backgroundPosition = 'center';
+              modalContent.style.backgroundRepeat = 'no-repeat';
+            };
+            reader.readAsDataURL(file);
+          } else {
+            errorText = 'Please upload a valid image file';
+            render();
+          }
+        }
+
+        function render() {
+          const container = document.getElementById('calculator');
+          if (!container) return;
+          container.style.opacity = opacity;
+          container.className = `p-6 rounded-lg shadow-lg max-w-md w-full ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`;
+          container.innerHTML = `
+            <h1 class="text-2xl font-bold mb-4 text-center">Matthy</h1>
+            <div class="mb-4">
+              <input
+                type="text"
+                id="input"
+                value="${inputText}"
+                placeholder="e.g., 2^4, x + 5 = 10, {x + y = 5, x - y = 1}"
+                class="w-full p-2 rounded ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100 text-black'} border ${errorText ? 'border-red-500' : 'border-gray-300'}"
+              />
+              ${errorText ? `<p class="text-red-500 text-sm mt-1">${errorText}</p>` : ''}
+              ${resultText ? `<p class="text-green-500 text-sm mt-1 whitespace-pre-wrap">Result: ${resultText}</p>` : ''}
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+              ${buttons.map(row => row.map(btn => `
+                <button onclick="handleButtonClick('${btn}')" class="p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}">${btn}</button>
+              `).join('')).join('')}
+            </div>
+            <div class="mt-2 transition-all ${showCollapseMenu ? 'max-h-96' : 'max-h-0'} overflow-hidden">
+              <div class="grid grid-cols-4 gap-2 p-3 ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}">
+                ${collapseButtons.map(btn => `
+                  <button onclick="handleButtonClick('${btn}')" class="p-3 rounded-lg ${darkMode ? 'bg-gray-600 hover:bg-gray-500 text-white' : 'bg-gray-300 hover:bg-gray-400'}">${btn}</button>
+                `).join('')}
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-2 mt-4">
+              <button onclick="handleButtonClick('Solve')" class="p-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white">Solve</button>
+              <button onclick="handleButtonClick('Random')" class="p-3 rounded-lg bg-green-500 hover:bg-green-600 text-white">Random</button>
+              <button onclick="handleButtonClick('C')" class="p-3 rounded-lg bg-red-500 hover:bg-red-600 text-white">C</button>
+            </div>
+            <p class="text-sm mt-4 text-center">
+              Supports algebra, calculus, systems of equations. Use 'x' for multiplication, '^' for powers (e.g., 2^4).
+            </p>
+          `;
+
+          const externalControls = document.getElementById('external-controls');
+          externalControls.innerHTML = `
+            <button onclick="handleButtonClick('${SETTINGS_BUTTON}')" class="p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}">${SETTINGS_BUTTON}</button>
+            <button onclick="handleButtonClick('${LIGHT_DARK_BUTTON}')" class="p-3 rounded-lg ${darkMode ? 'bg-yellow-600 hover:bg-yellow-500' : 'bg-yellow-500 hover:bg-yellow-400'} text-white">${darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+          `;
+
+          const settingsPanel = document.getElementById('settings-panel');
+          settingsPanel.innerHTML = showSettings ? `
+            <div class="p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'}">
+              <h2 class="text-lg font-bold mb-2">Settings</h2>
+              <div class="mb-2">
+                <label class="text-sm">Upload Background:</label>
+                <input type="file" id="background-upload" accept="image/*" class="mt-1">
+              </div>
+              <div>
+                <label class="text-sm">Calculator Opacity: ${opacity.toFixed(1)}</label>
+                <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="${opacity}" class="w-full mt-1">
+              </div>
+            </div>
+          ` : '';
+
+          const inputField = document.getElementById('input');
+          if (inputField) {
+            inputField.addEventListener('input', (e) => {
+                inputText = e.target.value;
+                resultText = errorText = '';
+                render();
+            });
+            inputField.addEventListener('keydown', async (e) => {
+              if (e.key === 'Enter') {
+                await handleButtonClick(SOLVE_BUTTON);
+              }
+            });
+          }
+
+          if (showSettings) {
+            const bgUpload = document.getElementById('background-upload');
+            if (bgUpload) bgUpload.addEventListener('change', handleBackgroundUpload);
+            const opSlider = document.getElementById('opacity-slider');
+            if (opSlider) opSlider.addEventListener('input', (e) => {
+              opacity = parseFloat(e.target.value);
+              render();
+            });
+          }
+        }
+
+        async function handleButtonClick(btn) {
+          if (btn === SOLVE_BUTTON) {
+            try {
+              const resultJson = await pyodide.runPythonAsync(`solve_equation("${inputText.replace(/"/g, '\\\\"')}")`);
+              const parsed = JSON.parse(resultJson);
+              resultText = parsed.result || '';
+              errorText = parsed.error || '';
+            } catch (e) {
+              errorText = 'Error evaluating input';
+            }
+          } else if (btn === CLEAR_BUTTON) {
+            inputText = resultText = errorText = '';
+          } else if (btn === RANDOM_BUTTON) {
+            inputText = randomEquations[Math.floor(Math.random() * randomEquations.length)];
+            resultText = errorText = '';
+          } else if (btn === LIGHT_DARK_BUTTON) {
+            darkMode = !darkMode;
+          } else if (btn === SETTINGS_BUTTON) {
+            showSettings = !showSettings;
+          } else if (btn === 'More') {
+            showCollapseMenu = !showCollapseMenu;
+          } else {
+            inputText += btn;
+          }
+          render();
+        }
+
+        async function main() {
+          await initPyodide();
+          render();
+        }
+    </script>
 </body>
 </html>
