@@ -18,7 +18,14 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 * **Development Environment:** Minimalist CLI workflows, custom standalone distributions
 
 ---
-
+### ⚙️ Environment Specs
+| Component | Target / Tool |
+| :--- | :--- |
+| **Primary Shell** | PowerShell + Custom Scripts |
+| **Runtime Env** | Ghost Python (Portable v3.14) |
+| **Graphics API** | Vulkan / OpenGL Shaders |
+| **Editor Config** | Minimalist CLI / Terminal Workflows |
+---
 ### 🚀 Projects & Utilities
 
 * **[Spectral Ghost](https://github.com/DAPOWER99/Spectral-Ghost)** — A real-time screen sampling and color recognition engine built with Python, Tkinter, OpenCV, NumPy, and SciPy.
