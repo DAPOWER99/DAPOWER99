@@ -36,7 +36,13 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 * 📫 **How to reach me:** Through my GitHub profile and repositories.
 
 ---
-### 📊 Connect & Skills
+### 🗺️ Current Side Quests
+* [x] **Ghost Python:** Build an ultra-minimal portable Python 3.14 distribution.
+* [x] **Spectral Ghost:** Implement real-time color sampling using OpenCV and NumPy.
+* [ ] **GLI Renderer:** Map GPU compute outputs directly to a terminal ASCII character grid using Vulkan and Zig.
+
+---
+### 🌟 Connect & Skills
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=white)
