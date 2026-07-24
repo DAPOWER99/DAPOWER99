@@ -46,6 +46,13 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ![OpenGL](https://img.shields.io/badge/OpenGL-5586A4?style=for-the-badge&logo=opengl&logoColor=white)
 
 ---
+## 🏆 GitHub Achievements
+
+<p>
+  <img src="https://github-profile-achievements.vercel.app/api?username=YOUR-USERNAME&streak=true&counter=true" alt="GitHub Achievements" />
+</p>
+
+---
 ### 📊 GitHub Stats
 ![GitHub Streak](https://streak-stats.demolab.com?user=DAPOWER99&theme=radical&hide_border=true)]
 ![Top Languages](https://github-flex.vercel.app/api/languages?username=DAPOWER99&theme=radical&hide_border=true)
