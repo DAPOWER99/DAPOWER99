@@ -1,8 +1,12 @@
-### Hi there, I'm DAPOWER99 👋
+<img align="right" src="https://raw.githubusercontent.com/DAPOWER99/DAPOWER99/main/DAPOWER99.svg" alt="Custom Banner" width="42%" />
+
+### Hi there, I'm DAPOWER99 👋 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=~DAPOWER99+-+CLI+Dev)](https://git.io/typing-svg)
 
 I'm a software developer and programmer who builds custom command-line tools, utilities, and lightweight desktop applications. I enjoy low-level systems logic, optimization, and scripting with Python and modern tooling.
+
+<br clear="right" />
 
 ---
 
@@ -44,14 +48,6 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ![OpenSSL](https://img.shields.io/badge/OpenSSL-7717FF?style=for-the-badge&logo=openssl&logoColor=white)
 ![Vulkan](https://img.shields.io/badge/Vulkan-AC162C?style=for-the-badge&logo=vulkan&logoColor=white)
 ![OpenGL](https://img.shields.io/badge/OpenGL-5586A4?style=for-the-badge&logo=opengl&logoColor=white)
-
----
-
-<div align="center">
-  <svg height="60" width="450">
-    <text x="0" y="40" fill="#00ffff" font-family="monospace" font-size="28" font-weight="bold">DAPOWER99://CORE_ACTIVE</text>
-  </svg>
-</div>
 
 ---
 ## 🏅 Milestones
