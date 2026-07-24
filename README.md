@@ -47,9 +47,15 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 ---
 
-## 🏆 GitHub Achievements
+## 🏆 GitHub Trophies
 
-[![Profile Summary Card](https://github-profile-summary-cards.vercel.app/api/profile-details?username=DAPOWER99&theme=tokyonight)](https://github.com/DAPOWER99)
+[![trophy](https://github-profile-trophy.vercel.app/?username=DAPOWER99&theme=tokyonight&no-bg=true&column=4)](https://github.com/DAPOWER99)
+
+---
+## 🏅 Milestones
+
+![Pull Requests](https://img.shields.io/badge/PRs-Active-cyan?style=for-the-badge&logo=git&logoColor=white)
+![Contributions](https://img.shields.io/badge/Contributions-100%2B-blue?style=for-the-badge&logo=github&logoColor=white)
 
 ---
 ### 📊 GitHub Stats
