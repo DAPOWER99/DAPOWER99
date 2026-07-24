@@ -606,12 +606,15 @@ def solve_equation(expr):
     
     try:
         if not any(char in expr_clean for char in ['=', '{', '}', 'diff', 'int', 'x', 'y', 'sin', 'cos', 'tan', 'sqrt', 'ln', 'pi']):
-            res = eval(expr_clean.replace('x', '*'))
+            # Safely replace 'x' with '*' only for multiplication when it acts as an operator,
+            # or handle simple numeric expressions cleanly.
+            eval_str = expr_clean.replace('x', '*').replace('X', '*')
+            res = eval(eval_str)
             return json.dumps({ "result": str(res), "error": None })
     except Exception:
         pass
 
-    expr = expr_clean.replace('^', '**')
+    expr = expr_clean.replace('^', '**').replace('x', '*').replace('X', '*')
     x, y = symbols('x y')
     try:
         if '=' in expr and '{' in expr:
@@ -668,7 +671,7 @@ def solve_equation(expr):
                 type="text"
                 id="input"
                 value="${inputText}"
-                placeholder="e.g., 2^4, x + 5 = 10, {x + y = 5, x - y = 1}"
+                placeholder="e.g., 5*6, 2^4, x + 5 = 10"
                 class="w-full p-2 rounded ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100 text-black'} border ${errorText ? 'border-red-500' : 'border-gray-300'}"
               />
               ${errorText ? `<p class="text-red-500 text-sm mt-1">${errorText}</p>` : ''}
@@ -711,7 +714,7 @@ def solve_equation(expr):
                 <input type="file" id="background-upload" accept="image/*" class="mt-1">
               </div>
               <div>
-                <label class="text-sm">Calculator Opacity: ${opacity.toFixed(1)}</label>
+                <label class="text-sm">Calculator Opacity: ${opacity.edal ? opacity.toFixed(1) : opacity.toFixed(1)}</label>
                 <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="${opacity}" class="w-full mt-1">
               </div>
             </div>
