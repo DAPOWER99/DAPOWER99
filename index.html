@@ -176,8 +176,8 @@
         }
 
         .terminal-output {
-            min-height: 100px;
-            max-height: 300px;
+            min-height: 120px;
+            max-height: 320px;
             overflow-y: auto;
             margin-bottom: 10px;
             white-space: pre-wrap;
@@ -421,14 +421,14 @@
 
         <hr>
 
-        <!-- Secret Terminal Section -->
-        <h2>🖥️ Secret Terminal</h2>
-        <p>Type <code>calc</code> and press Enter to launch the Matthy engine interface[cite: 1].</p>
+        <!-- Interactive Terminal Section -->
+        <h2>🖥️ Terminal</h2>
+        <p>Type <code>help</code> to view available commands, or launch the Matthy engine interface using <code>calc</code>[cite: 1].</p>
         <div class="terminal-container">
             <div id="terminal-output" class="terminal-output">DAPOWER99 Terminal [Version 3.14.0]
 (c) Corporation. All rights reserved.
 
-Type 'help' for available commands, or 'calc' to launch Matthy[cite: 1].
+Type 'help' for a full list of available commands.
 </div>
             <div class="terminal-input-line">
                 <span class="terminal-prompt">guest@dapower99:~$</span>
@@ -460,19 +460,71 @@ Type 'help' for available commands, or 'calc' to launch Matthy[cite: 1].
                 const cmd = termInput.value.trim();
                 termOutput.innerHTML += `\nguest@dapower99:~$ ${cmd}\n`;
                 
-                if (cmd === 'calc') {
+                const lowerCmd = cmd.toLowerCase();
+
+                if (lowerCmd === 'calc') {
                     termOutput.innerHTML += `Launching Matthy interface...\n`;
                     openCalculator();
-                } else if (cmd === 'help') {
-                    termOutput.innerHTML += `Available commands: help, calc, clear, status, echo [text]\n`;
-                } else if (cmd === 'clear') {
+                } else if (lowerCmd === 'help') {
+                    termOutput.innerHTML += `Available commands:
+  - calc         : Launch Matthy interactive calculator[cite: 1]
+  - osinfo       : Display system OS info (definitely not Arch)
+  - help         : Display this help menu
+  - clear        : Clear terminal screen
+  - status       : Display system status & specs
+  - about        : Show bio and developer info
+  - projects     : List active repositories & utilities
+  - skills       : Print tech stack & languages
+  - echo [text]  : Echo back input text
+  - date         : Show current system date & time
+  - neofetch     : Display system info banner
+  - whoami       : Show current user session info
+  - socials      : List channel and profile links
+  - exit         : Reset terminal session\n`;
+                } else if (lowerCmd === 'osinfo') {
+                    termOutput.innerHTML += `totally not arch i DONT use arch btw fuck arch\n`;
+                } else if (lowerCmd === 'clear') {
                     termOutput.innerHTML = `DAPOWER99 Terminal [Version 3.14.0]\n`;
-                } else if (cmd === 'status') {
-                    termOutput.innerHTML += `System online. Shell: PowerShell + Custom Scripts. Runtime: Ghost Python v3.14.\n`;
-                } else if (cmd.startsWith('echo ')) {
+                } else if (lowerCmd === 'status') {
+                    termOutput.innerHTML += `System Status: Online
+Shell: PowerShell + Custom Scripts
+Runtime: Ghost Python v3.14 (Portable)
+Graphics API: Vulkan / OpenGL Shaders\n`;
+                } else if (lowerCmd === 'about') {
+                    termOutput.innerHTML += `DAPOWER99: Software developer and programmer building custom command-line tools, utilities, and lightweight desktop applications.\n`;
+                } else if (lowerCmd === 'projects') {
+                    termOutput.innerHTML += `Projects:
+  1. Spectral Ghost (Real-time color sampling engine)
+  2. Ghost Python (Portable minimal Python 3.14 distro)
+  3. Gridlock (CLI & web Minesweeper clone)
+  4. HIDEBAF (Custom encryption software)\n`;
+                } else if (lowerCmd === 'skills') {
+                    termOutput.innerHTML += `Languages & Tools: Python, Zig, C++, PowerShell, Git, OpenCV, NumPy, SciPy, Vulkan, OpenGL, OpenSSL\n`;
+                } else if (lowerCmd === 'date') {
+                    termOutput.innerHTML += `${new Date().toString()}\n`;
+                } else if (lowerCmd === 'neofetch') {
+                    termOutput.innerHTML += `
+       /\\        guest@dapower99
+      /  \\       --------------
+     /\\   \\      OS: totally not arch i DONT use arch btw fuck arch
+    /      \\     Host: Ghost Python v3.14 Runtime
+   / /\\     \\    Shell: PowerShell Custom CLI
+  / /  \\     \\   Uptime: Active & Online
+ / /    \\     \\  Languages: Python, Zig, C++
+/_/      \\_____\\ Terminal: Web-based VT100\n`;
+                } else if (lowerCmd === 'whoami') {
+                    termOutput.innerHTML += `guest@dapower99 (Privilege Level: Standard User)\n`;
+                } else if (lowerCmd === 'socials') {
+                    termOutput.innerHTML += `GitHub: github.com/DAPOWER99
+Discord Community: discord.gg/9eyjFmv8Hu
+Twitter/X: x.com/King_Dragon_iz
+Instagram: instagram.com/_youssef_is_cool\n`;
+                } else if (lowerCmd === 'exit') {
+                    termOutput.innerHTML += `Session ended. Type 'help' to restart.\n`;
+                } else if (lowerCmd.startsWith('echo ')) {
                     termOutput.innerHTML += `${cmd.substring(5)}\n`;
                 } else if (cmd !== '') {
-                    termOutput.innerHTML += `Command not recognized: '${cmd}'. Type 'help' for options.\n`;
+                    termOutput.innerHTML += `Command not recognized: '${cmd}'. Type 'help' for available options.\n`;
                 }
                 
                 termInput.value = '';
@@ -550,19 +602,16 @@ def solve_equation(expr):
     import json
     from sympy import symbols, Eq, solve, parse_expr, diff, integrate
 
-    # Safe evaluation cleanup for implicit multiplication like '9x9' -> '9*x*9' or handling basic arithmetic fallback via eval
     expr_clean = expr.strip()
     
-    # If it's pure standard arithmetic without sympy symbols/equations, try evaluation directly first
     try:
         if not any(char in expr_clean for char in ['=', '{', '}', 'diff', 'int', 'x', 'y', 'sin', 'cos', 'tan', 'sqrt', 'ln', 'pi']):
-            # Clean safe evaluation for standard arithmetic
             res = eval(expr_clean.replace('x', '*'))
             return json.dumps({ "result": str(res), "error": None })
     except Exception:
         pass
 
-    expr = expr_clean.replace('^', '**')  # convert ^ to **
+    expr = expr_clean.replace('^', '**')
     x, y = symbols('x y')
     try:
         if '=' in expr and '{' in expr:
@@ -650,7 +699,7 @@ def solve_equation(expr):
           const externalControls = document.getElementById('external-controls');
           externalControls.innerHTML = `
             <button onclick="handleButtonClick('${SETTINGS_BUTTON}')" class="p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}">${SETTINGS_BUTTON}</button>
-            <button onclick="handleButtonClick('${LIGHT_DARK_BUTTON}')" class="p-3 unregistered rounded-lg ${darkMode ? 'bg-yellow-600 hover:bg-yellow-500' : 'bg-yellow-500 hover:bg-yellow-400'} text-white">${darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+            <button onclick="handleButtonClick('${LIGHT_DARK_BUTTON}')" class="p-3 rounded-lg ${darkMode ? 'bg-yellow-600 hover:bg-yellow-500' : 'bg-yellow-500 hover:bg-yellow-400'} text-white">${darkMode ? 'Light Mode' : 'Dark Mode'}</button>
           `;
 
           const settingsPanel = document.getElementById('settings-panel');
