@@ -399,7 +399,7 @@
             <a href="https://bsky.app/profile/did:plc:cjbh54mvfqwfvcl5pjgndt43"><img src="https://img.shields.io/badge/Bluesky-Profile-0285FF?style=for-the-badge&logo=bluesky&logoColor=white" alt="Bluesky"></a>
             <a href="https://www.patreon.com/DragonYG"><img src="https://img.shields.io/badge/Patreon-DragonYG-FF424D?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon"></a>
             <a href="https://medium.com/@DragonTheDev"><img src="https://img.shields.io/badge/Medium-DragonTheDev-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium"></a>
-            <a href="https://threads.com/@_youssef_is_cool"><img src="https://img.shields.io/badge/Threads-_youssef__is__cool-000000?style=for-the-badge&logo=threads&logoColor=white" alt="Threads"></a>
+            <a href="https://threads.com/@_youssef__is__cool"><img src="https://img.shields.io/badge/Threads-_youssef__is__cool-000000?style=for-the-badge&logo=threads&logoColor=white" alt="Threads"></a>
             <a href="https://dragonyg.tumblr.com/"><img src="https://img.shields.io/badge/Tumblr-dragonyg-35465C?style=for-the-badge&logo=tumblr&logoColor=white" alt="Tumblr"></a>
             <a href="https://www.twitch.tv/drgn_yg"><img src="https://img.shields.io/badge/Twitch-drgn__yg-9146FF?style=for-the-badge&logo=twitch&logoColor=white" alt="Twitch"></a>
             <a href="https://kick.com/dragonthedev"><img src="https://img.shields.io/badge/Kick-dragonthedev-53FC18?style=for-the-badge&logo=kick&logoColor=black" alt="Kick"></a>
@@ -550,7 +550,19 @@ def solve_equation(expr):
     import json
     from sympy import symbols, Eq, solve, parse_expr, diff, integrate
 
-    expr = expr.replace('^', '**')  # convert ^ to **
+    # Safe evaluation cleanup for implicit multiplication like '9x9' -> '9*x*9' or handling basic arithmetic fallback via eval
+    expr_clean = expr.strip()
+    
+    # If it's pure standard arithmetic without sympy symbols/equations, try evaluation directly first
+    try:
+        if not any(char in expr_clean for char in ['=', '{', '}', 'diff', 'int', 'x', 'y', 'sin', 'cos', 'tan', 'sqrt', 'ln', 'pi']):
+            # Clean safe evaluation for standard arithmetic
+            res = eval(expr_clean.replace('x', '*'))
+            return json.dumps({ "result": str(res), "error": None })
+    except Exception:
+        pass
+
+    expr = expr_clean.replace('^', '**')  # convert ^ to **
     x, y = symbols('x y')
     try:
         if '=' in expr and '{' in expr:
@@ -611,7 +623,7 @@ def solve_equation(expr):
                 class="w-full p-2 rounded ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100 text-black'} border ${errorText ? 'border-red-500' : 'border-gray-300'}"
               />
               ${errorText ? `<p class="text-red-500 text-sm mt-1">${errorText}</p>` : ''}
-              ${resultText ? `<p class="text-green-500 text-sm mt-1 whitespace-pre-wrap">Result: ${resultText}</p>` : ''}
+              ${resultText ? `<p class="text-green-500 text-lg font-bold mt-2 whitespace-pre-wrap">✅ Answer: ${resultText}</p>` : ''}
             </div>
             <div class="grid grid-cols-4 gap-2">
               ${buttons.map(row => row.map(btn => `
@@ -638,7 +650,7 @@ def solve_equation(expr):
           const externalControls = document.getElementById('external-controls');
           externalControls.innerHTML = `
             <button onclick="handleButtonClick('${SETTINGS_BUTTON}')" class="p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}">${SETTINGS_BUTTON}</button>
-            <button onclick="handleButtonClick('${LIGHT_DARK_BUTTON}')" class="p-3 rounded-lg ${darkMode ? 'bg-yellow-600 hover:bg-yellow-500' : 'bg-yellow-500 hover:bg-yellow-400'} text-white">${darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+            <button onclick="handleButtonClick('${LIGHT_DARK_BUTTON}')" class="p-3 unregistered rounded-lg ${darkMode ? 'bg-yellow-600 hover:bg-yellow-500' : 'bg-yellow-500 hover:bg-yellow-400'} text-white">${darkMode ? 'Light Mode' : 'Dark Mode'}</button>
           `;
 
           const settingsPanel = document.getElementById('settings-panel');
@@ -661,7 +673,6 @@ def solve_equation(expr):
             inputField.addEventListener('input', (e) => {
                 inputText = e.target.value;
                 resultText = errorText = '';
-                render();
             });
             inputField.addEventListener('keydown', async (e) => {
               if (e.key === 'Enter') {
