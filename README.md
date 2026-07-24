@@ -46,7 +46,6 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ![OpenGL](https://img.shields.io/badge/OpenGL-5586A4?style=for-the-badge&logo=opengl&logoColor=white)
 
 ---
-## 🏆 GitHub Achievements
 
 ## 🏆 GitHub Achievements
 
