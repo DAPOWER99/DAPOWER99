@@ -1,1 +1,186 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAPOWER99 | CLI Dev</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --border-color: #30363d;
+            --accent-color: #58a6ff;
+            --secondary-bg: #161b22;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 32px;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 8px 0;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #8b949e;
+            font-family: monospace;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+        }
+
+        .banner-container {
+            flex-shrink: 0;
+            width: 42%;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        .banner-container img:hover {
+            opacity: 0.85;
+        }
+
+        h2 {
+            font-size: 18px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-color);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                flex-direction: column-reverse;
+            }
+            .banner-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header & Clickable Banner Section -->
+        <div class="header-section">
+            <div class="header-content">
+                <h1>Hi there, I'm DAPOWER99 ⚡</h1>
+                <div class="subtitle">~DAPOWER99 - CLI Dev</div>
+                <p>I'm a software developer and programmer who builds custom command-line tools, utilities, and lightweight desktop applications. I enjoy low-level systems logic, optimization, and scripting with Python and modern tooling.</p>
+            </div>
+            <div class="banner-container">
+                <a href="https://YOUR-DESTINATION-URL-HERE">
+                    <img src="https://raw.githubusercontent.com/DAPOWER99/DAPOWER99/main/DAPOWER99.svg" alt="Custom Banner" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Tech Stack & Tools -->
+        <h2>💻 Tech Stack & Tools</h2>
+        <ul>
+            <li><strong>Languages:</strong> Python, Zig, C/C++</li>
+            <li><strong>Scripting & Automation:</strong> PowerShell, Bash, Git, OpenSSL / Signtool</li>
+            <li><strong>Graphics & Rendering:</strong> OpenGL, Vulkan, OpenCV, NumPy, SciPy</li>
+            <li><strong>Development Environment:</strong> Minimalist CLI workflows, custom standalone distributions</li>
+        </ul>
+
+        <!-- Environment Specs Table -->
+        <h2>⚙️ Environment Specs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Target / Tool</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primary Shell</td>
+                    <td>PowerShell + Custom Scripts</td>
+                </tr>
+                <tr>
+                    <td>Runtime Env</td>
+                    <td>Ghost Python (Portable v3.14)</td>
+                </tr>
+                <tr>
+                    <td>Graphics API</td>
+                    <td>Vulkan / OpenGL Shaders</td>
+                </tr>
+                <tr>
+                    <td>Editor Config</td>
+                    <td>Minimalist CLI / Terminal Workflows</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
