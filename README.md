@@ -52,6 +52,7 @@ I'm a software developer and programmer who builds custom command-line tools, ut
     <text x="0" y="40" fill="#00ffff" font-family="monospace" font-size="28" font-weight="bold">DAPOWER99://CORE_ACTIVE</text>
   </svg>
 </div>
+
 ---
 ## 🏅 Milestones
 
