@@ -49,7 +49,7 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 
 ## 🏆 GitHub Achievements
 
-[![Achievements](https://github-profile-achievements.vercel.app/api?username=DAPOWER99&color=cyan&line=three)](https://github.com/DAPOWER99)
+[![Profile Summary Card](https://github-profile-summary-cards.vercel.app/api/profile-details?username=DAPOWER99&theme=tokyonight)](https://github.com/DAPOWER99)
 
 ---
 ### 📊 GitHub Stats
