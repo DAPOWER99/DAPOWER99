@@ -1,5 +1,6 @@
-<img align="right" src="https://raw.githubusercontent.com/DAPOWER99/DAPOWER99/main/DAPOWER99.svg" alt="Custom Banner" width="42%" />
-
+<a href="https://github.com/DAPOWER99">
+  <img align="right" src="https://raw.githubusercontent.com/DAPOWER99/DAPOWER99/main/DAPOWER99.svg" alt="Custom Banner" width="42%" />
+</a>
 ### Hi there, I'm DAPOWER99 👋 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=~DAPOWER99+-+CLI+Dev)](https://Github.com/DAPOWER99)
