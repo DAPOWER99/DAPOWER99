@@ -2,7 +2,7 @@
 
 ### Hi there, I'm DAPOWER99 👋 
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=~DAPOWER99+-+CLI+Dev)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=~DAPOWER99+-+CLI+Dev)](https://Github.com/DAPOWER99)
 
 I'm a software developer and programmer who builds custom command-line tools, utilities, and lightweight desktop applications. I enjoy low-level systems logic, optimization, and scripting with Python and modern tooling.
 
