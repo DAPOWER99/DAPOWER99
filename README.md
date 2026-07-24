@@ -48,9 +48,9 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ---
 ## 🏆 GitHub Achievements
 
-<p>
-  <img src="https://github-profile-achievements.vercel.app/api?username=YOUR-USERNAME&theme=tokyonight&limit=8" alt="GitHub Achievements" />
-</p>
+## 🏆 GitHub Achievements
+
+[![GitHub Achievements](https://github-profile-summary-cards.vercel.app/api/achievements?username=DAPOWER99)](https://github.com/DAPOWER99)
 
 ---
 ### 📊 GitHub Stats
