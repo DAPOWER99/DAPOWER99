@@ -46,10 +46,12 @@ I'm a software developer and programmer who builds custom command-line tools, ut
 ![OpenGL](https://img.shields.io/badge/OpenGL-5586A4?style=for-the-badge&logo=opengl&logoColor=white)
 
 ---
-## 🏆 GitHub Trophies
 
-[![trophy](https://github-profile-trophy-tawny.vercel.app/?username=DAPOWER99&theme=tokyonight&no-bg=true&column=4)](https://github.com/DAPOWER99)
-
+<div align="center">
+  <svg height="60" width="450">
+    <text x="0" y="40" fill="#00ffff" font-family="monospace" font-size="28" font-weight="bold">DAPOWER99://CORE_ACTIVE</text>
+  </svg>
+</div>
 ---
 ## 🏅 Milestones
 
